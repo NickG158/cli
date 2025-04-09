@@ -4,13 +4,13 @@ from tests.mocks import MockedStep, MockedTags
 
 class TestBddTags(TestCase):
 
-    def test_unchanged_step_object(self, mock_datetime):
+    def test_unchanged_step_object(self):
         step = MockedStep()
         look_for_bdd_tags(step)
         self.assertFalse(step.context.no_failure)
         self.assertIsNone(step.context.failure_class)
 
-    def test_warning_case(self, mock_datetime):
+    def test_warning_case(self):
         step = MockedStep()
         step.all_tags = [MockedTags(name='warning')]
         look_for_bdd_tags(step)
