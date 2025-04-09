@@ -9,9 +9,9 @@ from semver import VersionInfo, compare
 from terraform_compliance.common.defaults import Defaults
 from radish.utils import console_write
 try:
-    import json
-except ImportError:
     import orjson as json
+except ImportError:
+    import json
 
 
 class EmptyStash(object):
