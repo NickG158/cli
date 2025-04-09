@@ -378,7 +378,7 @@ def jsonify(string):
         return string
 
     try:
-        return json.loads(string.encode())
+        return json.loads(string)
     except json.JSONDecodeError:
         return string
 
